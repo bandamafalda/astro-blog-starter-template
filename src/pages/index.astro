@@ -1,141 +1,180 @@
----
----
-
-<html lang="en">
+<html lang="el">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Banda Mafalda | Under Construction</title>
+
+    <title>Banda Mafalda</title>
 
     <style>
-      * { box-sizing: border-box; }
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+      }
 
-      body {
-        margin: 0;
-        min-height: 100vh;
+      body{
+        min-height:100vh;
+        overflow:hidden;
+
+        font-family:
+          Arial,
+          Helvetica,
+          sans-serif;
+
         background:
-          radial-gradient(circle at 15% 85%, rgba(40, 120, 220, 0.35), transparent 28%),
-          radial-gradient(circle at 85% 85%, rgba(40, 120, 220, 0.28), transparent 30%),
-          radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.04), transparent 35%),
-          #05070a;
-        color: #fff;
-        font-family: Arial, Helvetica, sans-serif;
-        overflow: hidden;
+          linear-gradient(
+            rgba(0,0,0,.28),
+            rgba(0,0,0,.58)
+          ),
+          url('/background.jpeg');
+
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+
+        color:white;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        position:relative;
       }
 
-      .page {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 32px;
-        text-align: center;
-        position: relative;
-      }
+      body::after{
+        content:"";
 
-      .smoke {
-        position: absolute;
-        inset: auto 0 0 0;
-        height: 42%;
+        position:absolute;
+        inset:0;
+
         background:
-          radial-gradient(circle at 18% 75%, rgba(70, 145, 255, 0.35), transparent 22%),
-          radial-gradient(circle at 82% 75%, rgba(70, 145, 255, 0.28), transparent 24%),
-          linear-gradient(to top, rgba(60, 130, 255, 0.14), transparent);
-        filter: blur(24px);
-        opacity: 0.7;
+          radial-gradient(
+            circle at 50% 85%,
+            rgba(255,140,60,.12),
+            transparent 35%
+          );
+
+        pointer-events:none;
+
+        mix-blend-mode:screen;
       }
 
-      .content {
-        position: relative;
-        z-index: 2;
-        max-width: 900px;
-        width: 100%;
+      .fog{
+        position:absolute;
+        inset:0;
+
+        background:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(255,255,255,.05),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,.04),
+            transparent 30%
+          );
+
+        filter:blur(30px);
+
+        opacity:.7;
+
+        pointer-events:none;
       }
 
-      .logo {
-        max-width: 680px;
-        width: 90%;
-        margin-bottom: 70px;
+      .content{
+        position:relative;
+        z-index:2;
+
+        text-align:center;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        gap:28px;
+
+        padding:40px;
       }
 
-      .line {
-        width: 80px;
-        height: 1px;
-        background: rgba(255,255,255,0.35);
-        margin: 0 auto 48px;
+      .logo{
+        width:min(700px,85vw);
+
+        opacity:.96;
+
+        filter:
+          drop-shadow(0 0 12px rgba(255,255,255,.06))
+          drop-shadow(0 0 40px rgba(255,255,255,.04));
       }
 
-      h1 {
-        font-size: clamp(1.6rem, 4vw, 3rem);
-        letter-spacing: 0.45em;
-        font-weight: 400;
-        margin: 0 0 36px;
+      .line{
+        width:140px;
+        height:1px;
+
+        background:
+          rgba(255,255,255,.35);
       }
 
-      p {
-        color: rgba(255,255,255,0.65);
-        letter-spacing: 0.35em;
-        font-size: clamp(0.8rem, 2vw, 1.05rem);
-        line-height: 2;
-        margin: 0;
+      h2{
+        font-size:.95rem;
+
+        letter-spacing:.45rem;
+
+        font-weight:300;
+
+        opacity:.75;
       }
 
-      .socials {
-        display: flex;
-        justify-content: center;
-        gap: 22px;
-        margin-top: 70px;
+      p{
+        font-size:1rem;
+        line-height:1.8;
+
+        opacity:.78;
+
+        max-width:600px;
       }
 
-      .socials a {
-        width: 48px;
-        height: 48px;
-        border: 1px solid rgba(255,255,255,0.35);
-        border-radius: 12px;
-        display: grid;
-        place-items: center;
-        color: white;
-        text-decoration: none;
-        font-size: 0.85rem;
-        transition: 0.25s;
-      }
+      @media (max-width:768px){
 
-      .socials a:hover {
-        border-color: white;
-        background: rgba(255,255,255,0.08);
-      }
+        .logo{
+          width:92vw;
+        }
 
-      @media (max-width: 600px) {
-        .logo { margin-bottom: 50px; }
-        h1 { letter-spacing: 0.25em; }
-        p { letter-spacing: 0.18em; }
+        h2{
+          font-size:.8rem;
+          letter-spacing:.3rem;
+        }
+
+        p{
+          font-size:.9rem;
+          line-height:1.6;
+        }
+
       }
     </style>
   </head>
 
   <body>
-    <main class="page">
-      <div class="smoke"></div>
 
-      <section class="content">
-        <img class="logo" src="/banda-mafalda-logo.png" alt="Banda Mafalda" />
+    <div class="fog"></div>
 
-        <div class="line"></div>
+    <section class="content">
 
-        <h1>UNDER CONSTRUCTION</h1>
+      <img
+        src="/logo.jpeg"
+        alt="Banda Mafalda"
+        class="logo"
+      />
 
-        <p>
-          SOMETHING IS BEING MADE.<br />
-          STAY TUNED.
-        </p>
+      <div class="line"></div>
 
-        <div class="socials">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="YouTube">YT</a>
-          <a href="#" aria-label="Spotify">SP</a>
-        </div>
-      </section>
-    </main>
+      <h2>UNDER CONSTRUCTION</h2>
+
+      <p>
+        New music, visuals and stories are being prepared.
+      </p>
+
+    </section>
+
   </body>
 </html>
