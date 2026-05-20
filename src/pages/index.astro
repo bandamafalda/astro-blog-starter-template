@@ -228,3 +228,102 @@
     </main>
   </body>
 </html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banda Mafalda</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #050505;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .logo {
+      width: min(850px, 86vw);
+      opacity: .97;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,.05));
+    }
+
+    .line {
+      width: 90px;
+      height: 1px;
+      background: rgba(255,255,255,.28);
+      margin: 34px auto;
+    }
+
+    .under {
+      letter-spacing: .42rem;
+      font-size: clamp(1.2rem, 3vw, 2.4rem);
+      font-weight: 300;
+      color: rgba(255,255,255,.9);
+    }
+
+    .text {
+      margin-top: 24px;
+      color: rgba(255,255,255,.62);
+      font-size: .9rem;
+      line-height: 1.9;
+      letter-spacing: .18rem;
+    }
+
+    .contact {
+      display: inline-block;
+      margin-top: 42px;
+      padding: 14px 34px;
+      border: 1px solid rgba(255,255,255,.22);
+      color: white;
+      text-decoration: none;
+      letter-spacing: .28rem;
+      font-size: .72rem;
+      background: rgba(255,255,255,.03);
+      transition: .25s ease;
+    }
+
+    .contact:hover {
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.38);
+    }
+
+    @media (max-width: 768px) {
+      .logo { width: 92vw; }
+      .under { letter-spacing: .24rem; }
+      .text { font-size: .78rem; letter-spacing: .1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <img src="/logo.jpeg" alt="Banda Mafalda" class="logo" />
+
+    <div class="line"></div>
+
+    <div class="under">UNDER CONSTRUCTION</div>
+
+    <div class="text">
+      SOMETHING IS BEING MADE.<br />
+      STAY TUNED.
+    </div>
+
+    <a href="mailto:info@bandamafalda.com" class="contact">
+      CONTACT
+    </a>
+  </main>
+</body>
+</html>
