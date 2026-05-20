@@ -5,68 +5,137 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Banda Mafalda</title>
+    <title>Banda Mafalda | Under Construction</title>
 
     <style>
+      * { box-sizing: border-box; }
+
       body {
         margin: 0;
-        background: #0d0d0d;
-        color: white;
-        font-family: Arial, sans-serif;
-        height: 100vh;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 15% 85%, rgba(40, 120, 220, 0.35), transparent 28%),
+          radial-gradient(circle at 85% 85%, rgba(40, 120, 220, 0.28), transparent 30%),
+          radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.04), transparent 35%),
+          #05070a;
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+      }
+
+      .page {
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 32px;
         text-align: center;
+        position: relative;
       }
 
-      .container {
-        max-width: 700px;
-        padding: 20px;
+      .smoke {
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 42%;
+        background:
+          radial-gradient(circle at 18% 75%, rgba(70, 145, 255, 0.35), transparent 22%),
+          radial-gradient(circle at 82% 75%, rgba(70, 145, 255, 0.28), transparent 24%),
+          linear-gradient(to top, rgba(60, 130, 255, 0.14), transparent);
+        filter: blur(24px);
+        opacity: 0.7;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        width: 100%;
+      }
+
+      .logo {
+        max-width: 680px;
+        width: 90%;
+        margin-bottom: 70px;
+      }
+
+      .line {
+        width: 80px;
+        height: 1px;
+        background: rgba(255,255,255,0.35);
+        margin: 0 auto 48px;
       }
 
       h1 {
-        font-size: 4rem;
-        margin-bottom: 10px;
+        font-size: clamp(1.6rem, 4vw, 3rem);
+        letter-spacing: 0.45em;
+        font-weight: 400;
+        margin: 0 0 36px;
       }
 
       p {
-        color: #bdbdbd;
-        line-height: 1.6;
-        font-size: 1.2rem;
+        color: rgba(255,255,255,0.65);
+        letter-spacing: 0.35em;
+        font-size: clamp(0.8rem, 2vw, 1.05rem);
+        line-height: 2;
+        margin: 0;
       }
 
-      .button {
-        display: inline-block;
-        margin-top: 30px;
-        padding: 14px 28px;
-        border: 1px solid white;
-        text-decoration: none;
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        margin-top: 70px;
+      }
+
+      .socials a {
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgba(255,255,255,0.35);
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
         color: white;
-        transition: 0.3s;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: 0.25s;
       }
 
-      .button:hover {
-        background: white;
-        color: black;
+      .socials a:hover {
+        border-color: white;
+        background: rgba(255,255,255,0.08);
+      }
+
+      @media (max-width: 600px) {
+        .logo { margin-bottom: 50px; }
+        h1 { letter-spacing: 0.25em; }
+        p { letter-spacing: 0.18em; }
       }
     </style>
   </head>
 
   <body>
-    <div class="container">
-      <h1>Banda Mafalda</h1>
+    <main class="page">
+      <div class="smoke"></div>
 
+      <section class="content">
+        <img class="logo" src="/banda-mafalda-logo.png" alt="Banda Mafalda" />
 
+        <div class="line"></div>
 
-      <p>
-        Official website under construction.
-      </p>
+        <h1>UNDER CONSTRUCTION</h1>
 
-      <a class="button" href="mailto:info@bandamafalda.com">
-        Contact
-      </a>
-    </div>
+        <p>
+          SOMETHING IS BEING MADE.<br />
+          STAY TUNED.
+        </p>
+
+        <div class="socials">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="Spotify">SP</a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
