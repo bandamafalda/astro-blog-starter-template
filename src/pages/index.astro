@@ -95,28 +95,38 @@
         line-height: 2.1;
       }
 
-      .socials {
-        display: flex;
-        justify-content: center;
-        gap: 18px;
-        margin-top: 70px;
-      }
+      .contact-btn {
+  margin-top: 70px;
 
-      .socials a {
-        width: 46px;
-        height: 46px;
-        display: grid;
-        place-items: center;
-        border: 1px solid rgba(255, 255, 255, 0.24);
-        border-radius: 11px;
-        color: rgba(255, 255, 255, 0.78);
-        text-decoration: none;
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        transition: 180ms ease;
-      }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-      .socials a:hover {
+  width: 190px;
+  height: 52px;
+
+  border: 1px solid rgba(255,255,255,0.24);
+  border-radius: 11px;
+
+  color: rgba(255,255,255,0.86);
+
+  text-decoration: none;
+
+  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+
+  transition: 180ms ease;
+
+  background: rgba(255,255,255,0.02);
+}
+
+.contact-btn:hover {
+  color: #fff;
+
+  border-color: rgba(255,255,255,0.72);
+
+  background: rgba(255,255,255,0.08);
+}
         color: #fff;
         border-color: rgba(255, 255, 255, 0.72);
         background: rgba(255, 255, 255, 0.08);
@@ -147,16 +157,14 @@
           font-size: 0.72rem;
         }
 
-        .socials {
-          margin-top: 54px;
-          gap: 12px;
-        }
+        .contact-btn {
+  margin-top: 54px;
 
-        .socials a {
-          width: 42px;
-          height: 42px;
-          font-size: 0.7rem;
-        }
+  width: 170px;
+  height: 48px;
+
+  font-size: 0.72rem;
+}
       }
     </style>
   </head>
@@ -175,12 +183,12 @@
           STAY TUNED.
         </p>
 
-        <nav class="socials" aria-label="Social links">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="YouTube">YT</a>
-          <a href="#" aria-label="Spotify">SP</a>
-        </nav>
+       <a
+  href="mailto:info@bandamafalda.com"
+  class="contact-btn"
+>
+  CONTACT
+</a>
       </section>
     </main>
   </body>
